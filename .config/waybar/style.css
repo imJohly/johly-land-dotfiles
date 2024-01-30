@@ -41,6 +41,7 @@ button:hover {
     /* background: repeating-linear-gradient(45deg, #2d2a2e, #ff0037 5px); */
     color: #ffffff;
     border-radius: 8px;
+    border-style: solid;
     transition: 500ms;
 }
 
@@ -109,7 +110,7 @@ button:hover {
     background: rgb(0,255,40);
     /* background: linear-gradient(60deg, #a5ff55 0%, #ffffff 100%); */
     background: #a5ff55;
-    border: 1px solid #a5ff55;
+    border: 2px solid #a5ff55;
     color: #000000;
 }
 
@@ -180,7 +181,7 @@ button:hover {
 #battery.warning {
     background: rgb(0,255,40);
     background: linear-gradient(90deg, #ffff55 0%, #ffffff 60%);
-    border: 1px solid #ffff55;
+    border: 2px solid #ffff55;
     color: #000000;
 }
 
@@ -207,42 +208,51 @@ button:hover {
 }
 
 #pulseaudio {
-    background-color: #ab9df2;
-    color: #000000;
+    border: 1px solid #ab9df2;
+    background-color: #11192e;
+    color: #ab9df2;
 }
 
 #pulseaudio.muted {
-    background-color: #2d2a2e;
-    color: #2a5c45;
+    border: 1px solid #2d2a2e;
+    background-color: #11192e;
+    color: #2d2a2e;
 }
 
 #backlight {
-    background-color: #78dce8;
-    color: #000000;
+    border: 1px solid #78dce8;
+    background-color: #11192e;
+    color: #78dce8;
 }
 
 #temperature {
-    background-color: #a9dc76;
-    color: #000000;
+    border: 1px solid #a9dc76;
+    background: #11192e;
+    color: #a9dc76;
 }
 
 #temperature.critical {
-    background-color: #ff6188;
+    border: 1px solid #ff6188;
+    background-color: #11192e;
+    color: #ff6188;
 }
 
 #memory {
-    background-color: #ffd866;
-    color: #000000;
+    border: 1px solid #ffd866;
+    background-color: #11192e;
+    color: #ffd866;
 }
 
 #cpu {
-    background-color: #fc9867;
-    color: #000000;
+    border: 1px solid #fc9867;
+    background-color: #11192e;
+    color: #fc9867;
 }
 
 #network {
-    background-color: #ff6188;
-    color: #000000;
+    border: 1px solid #ff6188;
+    background-color: #11192e;
+    color: #ff6188;
 }
 
 #network.disconnected {
