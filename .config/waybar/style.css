@@ -1,12 +1,20 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-family: FiraCodeNerdFont, Roboto, Helvetica, Arial, sans-serif;
     font-size: 13px;
 }
 
+/* @define-color normal-background #11192c; */
+@define-color foreground          rgb(193, 193, 193);
+@define-color normal-background   rgb(38, 50, 56);
+@define-color selected-background rgb(57, 66, 73);
+@define-color accent              #ff0037;
+@define-color accent-dark         #8a0320;
+@define-color accent-two          #00ffe1;
+
 window#waybar {
-    background-color: rgba(0, 0, 0, 0);
-    color: #ffffff;
+    background-color: transparent;
+    color: @accent;
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -34,33 +42,12 @@ button:hover {
     background: inherit;
 }
 
-#workspaces button {
+#clock {
     margin: 4px;
-    padding: 0 10px;
-    background: linear-gradient(0deg, #ff0037 0%, #2d2a2e 0%);
-    /* background: repeating-linear-gradient(45deg, #2d2a2e, #ff0037 5px); */
-    color: #ffffff;
-    border-radius: 8px;
-    border-style: solid;
-    transition: 500ms;
+    padding: 0 12px;
+
 }
 
-#workspaces button.active {
-    background: linear-gradient(0deg, #ff0037 100%, #2d2a2e 100%);
-    /* background: repeating-linear-gradient(45deg, transparent, #ff0037 100%); */
-}
-
-#workspaces button:hover {
-    margin: 2px;
-    border: 2px solid #ff0037;
-    border-radius: 10px;
-}
-
-#workspaces button.urgent {
-    background-color: #eb4d4b;
-}
-
-#clock,
 #battery,
 #cpu,
 #memory,
@@ -76,10 +63,8 @@ button:hover {
 #idle_inhibitor,
 #scratchpad,
 #mpd {
-    margin: 4px;
-    padding: 0 12px;
-    color: #ffffff;
-    border-radius: 8px;
+    margin: 0 2px;
+    padding: 0 8px;
 }
 
 #window,
@@ -97,6 +82,41 @@ button:hover {
     margin-right: 0;
 }
 
+
+/* LEFT MODULES */
+.modules-left {
+    margin-left: 4px;
+    margin-top: 8px;
+}
+
+#workspaces button {
+    margin: 0 4px;
+    padding: 0 12px;
+    background: linear-gradient(0deg, @accent-dark 0%, rgb(39,50,56) 0%);
+    border-radius: 16px;
+    border-style: solid;
+    border-width: 0;
+    border-color: transparent;
+    transition-property: background;
+    transition-duration: 500ms;
+}
+
+#workspaces button:hover {
+    background:  linear-gradient(0deg, @accent-dark 40%, rgb(39,50,56) 60%);
+}
+
+#workspaces button.active {
+    background: linear-gradient(0deg, @accent 100%, rgb(39,50,56) 100%);
+}
+
+/* #workspaces button.active:hover { */
+/*     background: linear-gradient(0deg, @accent-dark 100%, rgb(39,50,56) 100%); */
+/* } */
+
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+}
+
 /* CENTER MODULES */
 
 #clock {
@@ -106,100 +126,120 @@ button:hover {
 
 /* RIGHT MODULES */
 
+.modules-right {
+    margin-top: 8px;
+    margin-right: 8px;
+    padding: 4px 10px;
+
+    color: @foreground;
+    background-color: @normal-background;
+
+    border-radius: 12px;
+}
+
+/* COLOR VARIABLES */
+@define-color battery-good          #a5ff55;
+@define-color battery-med           #ff8e24;
+@define-color battery-low           @accent;
+@define-color battery-background    transparent;
+
 #battery {
-    background: rgb(0,255,40);
-    /* background: linear-gradient(60deg, #a5ff55 0%, #ffffff 100%); */
-    background: #a5ff55;
+    padding-right: 14px;
+
+    background: @battery-good;
     border: 2px solid #a5ff55;
-    color: #000000;
+    border-radius: 10px;
+
+    /* color: #000000; */
+    /* font-weight: bold; */
 }
 
 #battery.ninety-five {
-    background: linear-gradient(90deg, #a5ff55 90%, #ffffff 100%);
+    background: linear-gradient(70deg, @battery-good 95%, @battery-background 95%);
 }
 
 #battery.ninety {
-    background: linear-gradient(90deg, #a5ff55 85%, #ffffff 95%);
+    background: linear-gradient(70deg, @battery-good 90%, @battery-background 90%);
 }
 
 #battery.eighty-five {
-    background: linear-gradient(90deg, #a5ff55 80%, #ffffff 90%);
+    background: linear-gradient(70deg, @battery-good 85%, @battery-background 85%);
 }
 
 #battery.eighty {
-    background: linear-gradient(90deg, #a5ff55 75%, #ffffff 85%);
+    background: linear-gradient(70deg, @battery-good 80%, @battery-background 80%);
 }
 
 #battery.seventy-five {
-    background: linear-gradient(90deg, #a5ff55 70%, #ffffff 80%);
+    background: linear-gradient(70deg, @battery-good 75%, @battery-background 75%);
 }
 
 #battery.seventy {
-    background: linear-gradient(90deg, #a5ff55 65%, #ffffff 75%);
+    background: linear-gradient(70deg, @battery-good 70%, @battery-background 70%);
 }
 
 #battery.sixty-five {
-    background: linear-gradient(90deg, #a5ff55 60%, #ffffff 70%);
+    background: linear-gradient(70deg, @battery-good 65%, @battery-background 65%);
 }
 
 #battery.sixty {
-    background: linear-gradient(90deg, #a5ff55 55%, #ffffff 65%);
+    background: linear-gradient(70deg, @battery-good 60%, @battery-background 70%);
 }
 
 #battery.fifty-five {
-    background: linear-gradient(90deg, #a5ff55 50%, #ffffff 60%);
+    background: linear-gradient(70deg, @battery-good 55%, @battery-background 55%);
 }
 
 #battery.fifty {
-    background: linear-gradient(90deg, #a5ff55 45%, #ffffff 55%);
+    background: linear-gradient(70deg, @battery-good 50%, @battery-background 50%);
 }
 
 #battery.fourty-five {
-    background: linear-gradient(90deg, #a5ff55 40%, #ffffff 50%);
+    background: linear-gradient(70deg, @battery-good 45%, @battery-background 45%);
 }
 
 #battery.fourty {
-    background: linear-gradient(90deg, #a5ff55 35%, #ffffff 45%);
+    background: linear-gradient(70deg, @battery-good 40%, @battery-background 40%);
 }
 
 #battery.thirty-five {
-    background: linear-gradient(90deg, #a5ff55 30%, #ffffff 40%);
+    background: linear-gradient(70deg, @battery-good 35%, @battery-background 35%);
 }
 
 #battery.thirty {
-    background: linear-gradient(90deg, #a5ff55 25%, #ffffff 35%);
+    background: linear-gradient(70deg, @battery-good 30%, @battery-background 30%);
 }
 
 #battery.twenty-five {
-    background: linear-gradient(90deg, #a5ff55 20%, #ffffff 30%);
+    background: linear-gradient(70deg, @battery-good 25%, @battery-background 25%);
 }
 
 #battery.twenty {
-    background: linear-gradient(90deg, #a5ff55 15%, #ffffff 25%);
+    background: linear-gradient(70deg, @battery-good 20%, @battery-background 20%);
 }
 
 #battery.warning {
-    background: rgb(0,255,40);
-    background: linear-gradient(90deg, #ffff55 0%, #ffffff 60%);
+    background: linear-gradient(70deg, @battery-med 15%, @battery-background 15%);
     border: 2px solid #ffff55;
     color: #000000;
 }
 
+
 #battery.charging, #battery.plugged {
-    color: #ffffff;
-    background-color: #a9dc76;
+    color: #000000;
+    background-color: @battery-good;
 }
 
 @keyframes blink {
     to {
-        background-color: #ffffff;
-        color: #000000;
+        background-color: transparent;
+        color: @accent;
     }
 }
 
 #battery.critical:not(.charging) {
-    background-color: #ff6188;
-    color: #ffffff;
+    background-color: @accent;
+    border-color: @accent;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
@@ -207,54 +247,56 @@ button:hover {
     animation-direction: alternate;
 }
 
-#pulseaudio {
-    border: 1px solid #ab9df2;
-    background-color: #11192e;
-    color: #ab9df2;
-}
-
-#pulseaudio.muted {
-    border: 1px solid #2d2a2e;
-    background-color: #11192e;
-    color: #2d2a2e;
-}
-
-#backlight {
-    border: 1px solid #78dce8;
-    background-color: #11192e;
-    color: #78dce8;
-}
-
-#temperature {
-    border: 1px solid #a9dc76;
-    background: #11192e;
-    color: #a9dc76;
-}
-
-#temperature.critical {
-    border: 1px solid #ff6188;
-    background-color: #11192e;
-    color: #ff6188;
-}
-
-#memory {
-    border: 1px solid #ffd866;
-    background-color: #11192e;
-    color: #ffd866;
-}
-
-#cpu {
-    border: 1px solid #fc9867;
-    background-color: #11192e;
-    color: #fc9867;
-}
-
-#network {
-    border: 1px solid #ff6188;
-    background-color: #11192e;
-    color: #ff6188;
-}
-
-#network.disconnected {
-    background-color: #2d2a2e;
-}
+/* #pulseaudio { */
+/*     border: 2px solid @accent; */
+/*     background-color: @normal-background; */
+/*     color: @accent; */
+/* } */
+/**/
+/* #pulseaudio.muted { */
+/*     border: 2px solid @accent; */
+/*     background-color: @normal-background; */
+/*     color: @accent; */
+/* } */
+/**/
+/* #backlight { */
+/*     border: 2px solid @accent; */
+/*     background-color: @normal-background; */
+/*     color: @accent; */
+/* } */
+/**/
+/* #temperature { */
+/*     border: 2px solid @accent; */
+/*     background-color: @normal-background; */
+/*     color: @accent; */
+/* } */
+/**/
+/* #temperature.critical { */
+/*     border: 2px solid @accent; */
+/*     background-color: @normal-background; */
+/*     color: @accent; */
+/* } */
+/**/
+/* #memory { */
+/*     border: 2px solid @accent; */
+/*     background-color: @normal-background; */
+/*     color: @accent; */
+/* } */
+/**/
+/* #cpu { */
+/*     border-width: 2px; */
+/*     border-style: solid; */
+/*     border-image: linear-gradient(45deg, @accent, @accent-two) 1; */
+/*     background-color: @normal-background; */
+/*     color: @accent; */
+/* } */
+/**/
+/* #network { */
+/*     border: 2px solid @accent; */
+/*     background-color: @normal-background; */
+/*     color: @accent; */
+/* } */
+/**/
+/* #network.disconnected { */
+/*     background-color: @normal-background; */
+/* } */

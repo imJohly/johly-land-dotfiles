@@ -1,0 +1,49 @@
+configuration {
+    modes: [ combi ];
+    combi-modes: [ window, drun, run ];
+}
+
+@theme "/usr/share/rofi/themes/android_notification.rasi"
+
+* {
+    font: "Fira Code 14";
+}
+
+window {
+    height: 100%;
+    width: 100%;
+
+    padding: 20% 30%;
+
+    background-color: rgba(0, 0, 0, 0.4);
+    border: none;
+}
+
+entry {
+    placeholder: "Type here";
+}
+
+element {
+    margin: 6px;
+    padding: 2px;
+    
+    background-color: #ff0037;
+    border-radius: 2.5em;
+
+    orientation: horizontal;
+    children: [ element-icon, element-text ];
+    spacing: 2px;
+}
+
+element-icon {
+    size: 2em;
+    padding: 16px;
+}
+
+entry, element-text {
+    text-color: #ff0037;
+}
+
+element-text {
+    vertical-align: 0.5;
+}
