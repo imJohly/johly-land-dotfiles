@@ -1,0 +1,16 @@
+window {
+    margin: 10px;
+    border-radius: 16px;
+    font-size: 18px;
+}
+
+#input {
+    margin: 8px;
+    border-radius: 8px;
+}
+
+#inner-box {
+    margin: 8px;
+    border: none;
+}
+
