@@ -1,0 +1,13 @@
+{
+    "auxiliary_fan": "1",
+    "from": "User",
+    "gcode_flavor": "klipper",
+    "inherits": "Sovol SV06 Plus 0.4 nozzle",
+    "is_custom_defined": "0",
+    "name": "Sovol SV06 Plus 0.4 nozzle - Klipper",
+    "nozzle_type": "brass",
+    "print_host": "plus6.local",
+    "printer_settings_id": "Sovol SV06 Plus 0.4 nozzle - Klipper",
+    "printhost_apikey": "132002",
+    "version": "1.8.0.0"
+}

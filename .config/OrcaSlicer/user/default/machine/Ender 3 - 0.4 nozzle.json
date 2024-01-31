@@ -1,0 +1,9 @@
+{
+    "from": "User",
+    "gcode_flavor": "marlin2",
+    "inherits": "Creality Ender-3 0.4 nozzle",
+    "is_custom_defined": "0",
+    "name": "Ender 3 - 0.4 nozzle",
+    "printer_settings_id": "Ender 3 - 0.4 nozzle",
+    "version": "1.9.0.2"
+}

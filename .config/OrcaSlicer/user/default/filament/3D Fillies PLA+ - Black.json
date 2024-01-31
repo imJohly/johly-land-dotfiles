@@ -1,0 +1,49 @@
+{
+    "default_filament_colour": [
+        "#3D3846"
+    ],
+    "enable_pressure_advance": [
+        "1"
+    ],
+    "fan_max_speed": [
+        "90"
+    ],
+    "fan_min_speed": [
+        "90"
+    ],
+    "filament_flow_ratio": [
+        "0.972"
+    ],
+    "filament_max_volumetric_speed": [
+        "22.8"
+    ],
+    "filament_settings_id": [
+        "3D Fillies PLA+ - Black"
+    ],
+    "filament_vendor": [
+        "3D Fillies"
+    ],
+    "from": "User",
+    "inherits": "Sovol Generic PLA",
+    "is_custom_defined": "0",
+    "name": "3D Fillies PLA+ - Black",
+    "nozzle_temperature": [
+        "195"
+    ],
+    "nozzle_temperature_initial_layer": [
+        "200"
+    ],
+    "nozzle_temperature_range_high": [
+        "220"
+    ],
+    "overhang_fan_speed": [
+        "90"
+    ],
+    "pressure_advance": [
+        "0.035"
+    ],
+    "slow_down_layer_time": [
+        "0"
+    ],
+    "version": "1.8.0.0"
+}
