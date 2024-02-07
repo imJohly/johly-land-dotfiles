@@ -7,19 +7,22 @@
     // Choose the order of the modules
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
     "modules-center": ["clock"],
-    "modules-right": ["network", "cpu", "memory", "temperature", "backlight", "pulseaudio", "battery"],
+    "modules-right": ["network", "cpu", "memory", "temperature", "backlight", "pulseaudio", "battery", "custom/wlogout"],
     // Modules configuration
-        "hyprland/workspaces": {
-            "disable-scroll": true,
-            "all-outputs": true,
-            "warp-on-scroll": false,
-            "format": "{name}",
-            "format-icons": {
-                "urgent": "",
-                "focused": "",
-                "default": ""
-            }
-        },
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "warp-on-scroll": false,
+        "format": "{name}",
+        "format-icons": {
+            "urgent": "",
+            "focused": "",
+            "default": ""
+        }
+    },
+    "hyprland/window": {
+        "max-length": 40,
+    },
     "keyboard-state": {
         "numlock": true,
         "capslock": true,
@@ -146,17 +149,10 @@
         },
         "on-click": "pavucontrol"
     },
-    "custom/media": {
-        "format": "{icon} {}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    "custom/wlogout": {
+        "format": "  ",
+        "tooltip": false,
+        "on-click": "wlogout --protocol layer-shell --column-spacing 24 --row-spacing 24"
     }
 }
 

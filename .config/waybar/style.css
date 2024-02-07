@@ -62,7 +62,8 @@ button:hover {
 #mode,
 #idle_inhibitor,
 #scratchpad,
-#mpd {
+#mpd
+#custom-wlogout {
     margin: 0 2px;
     padding: 0 8px;
 }
@@ -93,10 +94,12 @@ button:hover {
     margin: 0 4px;
     padding: 0 12px;
     background: linear-gradient(0deg, @accent-dark 0%, rgb(39,50,56) 0%);
+    
     border-radius: 16px;
     border-style: solid;
     border-width: 0;
     border-color: transparent;
+    
     transition-property: background;
     transition-duration: 500ms;
 }
@@ -135,6 +138,20 @@ button:hover {
     background-color: @normal-background;
 
     border-radius: 12px;
+}
+
+#custom-wlogout button {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background: blue;
+    color: white;
+    transition: 500ms;
+}
+
+#custom-wlogout button:hover {
+    background: red;
+    color: black;
 }
 
 /* COLOR VARIABLES */
