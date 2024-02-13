@@ -1,28 +1,35 @@
 {
     "layer": "top", // Waybar at top layer
+    "output": ["eDP-1", "DP-2"],
     "position": "top", // Waybar position (top|bottom|left|right)
+
     "height": 0, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
-    "spacing": 4, // Gaps between modules (4px)
+
+    "spacing": 0, // Gaps between modules (4px)
+    
     // Choose the order of the modules
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
     "modules-center": ["clock"],
     "modules-right": ["network", "cpu", "memory", "temperature", "backlight", "pulseaudio", "battery", "custom/wlogout"],
+    
     // Modules configuration
     "hyprland/workspaces": {
         "disable-scroll": true,
-        "all-outputs": true,
+        "all-outputs": false,
         "warp-on-scroll": false,
-        "format": "{name}",
+        "format": "{icon}",
         "format-icons": {
             "urgent": "",
-            "focused": "",
-            "default": ""
+            "active": "",
+            "default": ""
         }
     },
+    
     "hyprland/window": {
         "max-length": 40,
     },
+    
     "keyboard-state": {
         "numlock": true,
         "capslock": true,
@@ -32,10 +39,12 @@
             "unlocked": ""
         }
     },
+    
     "hyprland/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
-     "mpd": {
+    
+    "mpd": {
         "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
         "format-disconnected": "Disconnected ",
         "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
@@ -61,6 +70,7 @@
         "tooltip-format": "MPD (connected)",
         "tooltip-format-disconnected": "MPD (disconnected)"
     },
+    
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
@@ -68,18 +78,22 @@
             "deactivated": ""
         }
     },
-     "clock": {
+    
+    "clock": {
         "format": "  {:%I:%M %p}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d}"
     },
+    
     "cpu": {
         "format": "{usage}% ",
         "tooltip": false
     },
+    
     "memory": {
         "format": "{}% "
     },
+    
     "temperature": {
         // "thermal-zone": 2,
         // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
@@ -88,11 +102,13 @@
         "format": "{temperatureC}°C {icon}",
         "format-icons": ["", "", ""]
     },
+    
     "backlight": {
         // "device": "acpi_video1",
         "format": "{percent}% {icon}",
         "format-icons": ["", "", "", "", "", "", "", "", ""]
     },
+    
     "battery": {
         "states": {
             "ninety-five":     95,
@@ -121,6 +137,7 @@
         // "format-full": "",
         "format-icons": ["", "", "", "", ""]
     },
+    
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "{signalStrength}% ",
@@ -130,6 +147,7 @@
         "format-disconnected": "⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
+    
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         "format": "{volume}% {icon} {format_source}",
@@ -149,10 +167,11 @@
         },
         "on-click": "pavucontrol"
     },
+    
     "custom/wlogout": {
         "format": "  ",
         "tooltip": false,
-        "on-click": "wlogout --protocol layer-shell --column-spacing 24 --row-spacing 24"
+        "on-click": "wlogout --margin 540 --column-spacing 100 --row-spacing 50 --protocol layer-shell"
     }
 }
 

@@ -6,7 +6,7 @@
 
 /* @define-color normal-background #11192c; */
 @define-color foreground          rgb(193, 193, 193);
-@define-color normal-background   rgb(38, 50, 56);
+@define-color normal-background   rgb(0, 0, 0);
 @define-color selected-background rgb(57, 66, 73);
 @define-color accent              #ff0037;
 @define-color accent-dark         #8a0320;
@@ -40,12 +40,6 @@ button {
 
 button:hover {
     background: inherit;
-}
-
-#clock {
-    margin: 4px;
-    padding: 0 12px;
-
 }
 
 #battery,
@@ -86,35 +80,40 @@ button:hover {
 
 /* LEFT MODULES */
 .modules-left {
-    margin-left: 4px;
-    margin-top: 8px;
+    margin-left: 16px;
+    margin-top: 16px;
 }
 
-#workspaces button {
-    margin: 0 4px;
-    padding: 0 12px;
-    background: linear-gradient(0deg, @accent-dark 0%, rgb(39,50,56) 0%);
-    
+#workspaces {
+    padding-left: 2px;
+    padding-right: 6px;
+
     border-radius: 16px;
     border-style: solid;
     border-width: 0;
     border-color: transparent;
     
-    transition-property: background;
-    transition-duration: 500ms;
+    background: @normal-background;
+    
+    transition: 250ms;
+}
+
+#workspaces button {
+    padding: 0 4px;
+    
+    background: transparent;
+        
+    transition: 250ms;
 }
 
 #workspaces button:hover {
-    background:  linear-gradient(0deg, @accent-dark 40%, rgb(39,50,56) 60%);
+    font-size: 12px;
+    color: @accent;
 }
 
 #workspaces button.active {
-    background: linear-gradient(0deg, @accent 100%, rgb(39,50,56) 100%);
+    color: @accent;
 }
-
-/* #workspaces button.active:hover { */
-/*     background: linear-gradient(0deg, @accent-dark 100%, rgb(39,50,56) 100%); */
-/* } */
 
 #workspaces button.urgent {
     background-color: #eb4d4b;
@@ -123,15 +122,15 @@ button:hover {
 /* CENTER MODULES */
 
 #clock {
-    margin: 0;
+    padding-top: 16px;
     background-color: transparent;
 }
 
 /* RIGHT MODULES */
 
 .modules-right {
-    margin-top: 8px;
-    margin-right: 8px;
+    margin-top: 16px;
+    margin-right: 16px;
     padding: 4px 10px;
 
     color: @foreground;
