@@ -10,13 +10,14 @@ configuration {
 }
 
 window {
-    height: 100%;
-    width: 100%;
+    height: 50%;
+    width: 50%;
 
-    padding: 20% 30%;
+    padding: 24px;
 
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0);
     border: none;
+    border-radius: 64px;
 }
 
 entry {
@@ -27,7 +28,6 @@ element {
     margin: 6px;
     padding: 2px;
     
-    background-color: #ff0037;
     border-radius: 2.5em;
 
     orientation: horizontal;
@@ -35,12 +35,22 @@ element {
     spacing: 2px;
 }
 
+element.normal.normal,
+element.alternate.normal {
+    background-color: #000000;
+}
+
 element-icon {
     size: 2em;
     padding: 16px;
 }
 
-entry, element-text {
+entry {
+    text-color: #ff0037;
+}
+
+element.selected.normal {
+    background-color: #202027;
     text-color: #ff0037;
 }
 
