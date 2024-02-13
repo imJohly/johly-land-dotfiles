@@ -2,7 +2,7 @@
 	background-image: none;
 }
 window {
-	background-color: rgba(38, 50, 56, 0.5);
+	background-color: rgba(0, 0, 0, 0.4);
 }
 
 button {
@@ -11,9 +11,9 @@ button {
     color: rgb(193, 193, 193);
 	background-color: rgb(38, 50, 56);
 
-    border-radius: 40px;
-	border-style: solid;
-	border-width: 2px;
+ /*    border-radius: 40px; */
+	/* border-style: solid; */
+	/* border-width: 2px; */
 	
     background-repeat: no-repeat;
 	background-position: center;
@@ -22,6 +22,7 @@ button {
 
 button:focus, button:active, button:hover {
 	background-color: #ff0037;
+    border-color: #9c0525;
 	outline-style: none;
 }
 
