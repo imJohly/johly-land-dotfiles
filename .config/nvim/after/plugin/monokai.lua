@@ -1,5 +1,5 @@
 require("monokai-pro").setup({
-    transparent_background = true,
+    transparent_background = false,
     terminal_colors = true,
 })
 
