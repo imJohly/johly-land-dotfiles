@@ -162,100 +162,41 @@ button:hover {
 #battery {
     padding-right: 14px;
 
-    background: @battery-good;
-    border: 2px solid #a5ff55;
+    color: @battery-good;
+    border: 2px solid @battery-good;
     border-radius: 10px;
 
-    /* color: #000000; */
-    /* font-weight: bold; */
-}
-
-#battery.ninety-five {
-    background: linear-gradient(70deg, @battery-good 95%, @battery-background 95%);
-}
-
-#battery.ninety {
-    background: linear-gradient(70deg, @battery-good 90%, @battery-background 90%);
-}
-
-#battery.eighty-five {
-    background: linear-gradient(70deg, @battery-good 85%, @battery-background 85%);
-}
-
-#battery.eighty {
-    background: linear-gradient(70deg, @battery-good 80%, @battery-background 80%);
-}
-
-#battery.seventy-five {
-    background: linear-gradient(70deg, @battery-good 75%, @battery-background 75%);
-}
-
-#battery.seventy {
-    background: linear-gradient(70deg, @battery-good 70%, @battery-background 70%);
-}
-
-#battery.sixty-five {
-    background: linear-gradient(70deg, @battery-good 65%, @battery-background 65%);
-}
-
-#battery.sixty {
-    background: linear-gradient(70deg, @battery-good 60%, @battery-background 70%);
-}
-
-#battery.fifty-five {
-    background: linear-gradient(70deg, @battery-good 55%, @battery-background 55%);
-}
-
-#battery.fifty {
-    background: linear-gradient(70deg, @battery-good 50%, @battery-background 50%);
-}
-
-#battery.fourty-five {
-    background: linear-gradient(70deg, @battery-good 45%, @battery-background 45%);
-}
-
-#battery.fourty {
-    background: linear-gradient(70deg, @battery-good 40%, @battery-background 40%);
-}
-
-#battery.thirty-five {
-    background: linear-gradient(70deg, @battery-good 35%, @battery-background 35%);
-}
-
-#battery.thirty {
-    background: linear-gradient(70deg, @battery-good 30%, @battery-background 30%);
-}
-
-#battery.twenty-five {
-    background: linear-gradient(70deg, @battery-good 25%, @battery-background 25%);
-}
-
-#battery.twenty {
-    background: linear-gradient(70deg, @battery-good 20%, @battery-background 20%);
+    background: transparent;
 }
 
 #battery.warning {
-    background: linear-gradient(70deg, @battery-med 15%, @battery-background 15%);
-    border: 2px solid #ffff55;
-    color: #000000;
+    color: @battery-med;
+    border-color: @battery-med;
+
+    background: transparent;
 }
 
 
 #battery.charging, #battery.plugged {
-    color: #000000;
-    background-color: @battery-good;
+    color: @battery-good;
+    border-color: @battery-good;
+    
+    background: transparent;
 }
 
 @keyframes blink {
     to {
-        background-color: transparent;
+        border-color: @accent;
         color: @accent;
     }
 }
 
 #battery.critical:not(.charging) {
-    background-color: @accent;
-    border-color: @accent;
+    border-color: #ffffff;
+    color: #ffffff;
+    
+    background: transparent;
+
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;

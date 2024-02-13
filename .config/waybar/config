@@ -111,23 +111,8 @@
     
     "battery": {
         "states": {
-            "ninety-five":     95,
-            "ninety":           90,
-            "eighty-five":      85,
-            "eighty":           80,
-            "seventy-five":     75,
-            "seventy":          70,
-            "sixty-five":       65,
-            "sixty":            60,
-            "fifty-five":       55,
-            "fifty":            50,
-            "fourty-five":      45,
-            "fourty":           40,
-            "thirty-five":      35,
-            "thirty":           30,
-            "twenty-five":      25,
-            "twenty":           20,
-            "critical": 15
+            "warning":  20,
+            "critical": 10
         },
         "format": "{capacity}% {icon}",
         "format-charging": "{capacity}% ",
