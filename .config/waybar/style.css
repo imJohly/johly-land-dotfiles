@@ -6,7 +6,7 @@
 
 /* @define-color normal-background #11192c; */
 @define-color foreground          rgb(193, 193, 193);
-@define-color normal-background   rgb(0, 0, 0);
+@define-color normal-background   #131519;
 @define-color selected-background rgb(57, 66, 73);
 @define-color accent              #ff0037;
 @define-color accent-dark         #8a0320;
@@ -122,8 +122,11 @@ button:hover {
 /* CENTER MODULES */
 
 #clock {
-    padding-top: 16px;
-    background-color: transparent;
+    margin-top: 16px;
+    padding: 0 12px;
+    background-color: @normal-background;
+
+    border-radius: 12px;
 }
 
 /* RIGHT MODULES */
