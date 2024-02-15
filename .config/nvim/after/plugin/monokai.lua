@@ -3,4 +3,4 @@ require("monokai-pro").setup({
     terminal_colors = true,
 })
 
-vim.cmd([[colorscheme monokai-pro]])
+vim.cmd([[colorscheme monokai-pro-machine]])
