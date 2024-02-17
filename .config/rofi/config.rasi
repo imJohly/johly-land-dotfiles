@@ -10,25 +10,50 @@ configuration {
 }
 
 window {
-    height: 50%;
-    width: 50%;
+    width: 800px;
 
-    padding: 24px;
+    padding: 48px;
 
-    background-color: rgba(0, 0, 0, 0);
+    background-color: #131519;
     border: none;
-    border-radius: 64px;
+    border-radius: 12px;
 }
 
+listview {
+    lines: 5;
+}
+
+inputbar {
+    margin: 0 0 24px 0;
+    padding: 24px;
+    background-color: #c1c1c1;
+    border-radius: 8px;
+}
+
+prompt {
+    text-color: black;
+}
+    
 entry {
-    placeholder: "Type here";
+    placeholder: "search application here";
+    cursor: pointer;
+}
+
+scrollbar {
+    width: 4px;
+    
+    handle-width: 8px;
+    handle-color: #c1c1c1;
+
+    margin: 12px 0;
+    padding: 0;
 }
 
 element {
-    margin: 6px;
+    margin: 6px 6px 6px 0;
     padding: 2px;
     
-    border-radius: 2.5em;
+    border-radius: 12px;
 
     orientation: horizontal;
     children: [ element-icon, element-text ];
@@ -37,7 +62,7 @@ element {
 
 element.normal.normal,
 element.alternate.normal {
-    background-color: #000000;
+    background-color: #00000000;
 }
 
 element-icon {
