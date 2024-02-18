@@ -78,12 +78,17 @@ return require('packer').startup(function(use)
         config = function() require("nvim-autopairs").setup {} end
     }
 
+    -- Adds tabs
 	use { 'romgrk/barbar.nvim' }
 
+    -- Allows for selections to be surrounded with characters
     use { 'machakann/vim-sandwich' }
 
+    -- Allows terminal window to be toggled
     use {"akinsho/toggleterm.nvim", tag = '*', config = function()
         require("toggleterm").setup()
     end}
+
+    use { "petertriho/nvim-scrollbar" }
 
 end)
