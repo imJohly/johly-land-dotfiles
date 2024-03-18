@@ -4,14 +4,12 @@
     "position": "top", // Waybar position (top|bottom|left|right)
 
     "height": 0, // Waybar height (to be removed for auto height)
-    // "width": 1280, // Waybar width
 
     "spacing": 0, // Gaps between modules (4px)
     
-    // Choose the order of the modules
-    "modules-left": ["hyprland/workspaces", "hyprland/window"],
-    "modules-center": ["clock"],
-    "modules-right": ["network", "cpu", "memory", "temperature", "backlight", "pulseaudio", "battery", "custom/wlogout"],
+    "modules-left": ["hyprland/workspaces", "tray"],
+    "modules-center": ["clock", "idle_inhibitor"],
+    "modules-right": ["network", "bluetooth", "backlight", "pulseaudio", "battery", "custom/wlogout"],
     
     // Modules configuration
     "hyprland/workspaces": {
@@ -25,23 +23,10 @@
             "default": ""
         }
     },
-    
-    "hyprland/window": {
-        "max-length": 40,
-    },
-    
-    "keyboard-state": {
-        "numlock": true,
-        "capslock": true,
-        "format": "{name} {icon}",
-        "format-icons": {
-            "locked": "",
-            "unlocked": ""
-        }
-    },
-    
-    "hyprland/mode": {
-        "format": "<span style=\"italic\">{}</span>"
+
+    "tray": {
+        "icon-size": 21,
+        "spacing": 4
     },
     
     "mpd": {
@@ -82,7 +67,7 @@
     "clock": {
         "format": "  {:%I:%M %p}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        "format-alt": "󰃭 {:%Y/%m/%d}"
     },
     
     "cpu": {
@@ -100,7 +85,7 @@
         "critical-threshold": 80,
         // "format-critical": "{temperatureC}°C {icon}",
         "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", ""]
+        "format-icons": ["󰉬", "", "󰉪"]
     },
     
     "backlight": {
@@ -114,9 +99,9 @@
             "warning":  20,
             "critical": 10
         },
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
+        "format": "{capacity}% {icon} ",
+        "format-charging": "{capacity}%  ",
+        "format-plugged": "{capacity}%  ",
         "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
@@ -124,27 +109,34 @@
     },
     
     "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{signalStrength}% ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "format-wifi": "  ",
+        "format-ethernet": "{ipaddr}/{cidr} 󰈀",
+        "tooltip-format": "{ifname} via {gwaddr}",
+        "format-linked": "{ifname} (No IP)",
+        "format-disconnected": " ⚠ ",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "on-click": "iwgtk"
+    },
+
+    "bluetooth": {
+        "format-on": "  ",
+        "format-off": " 󰂲 ",
+        "format-connected": " 󰂱 ",
+        "on-click": "blueman-manager"
     },
     
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         "format": "{volume}% {icon} {format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
+        "format-bluetooth-muted": "󰟎  {icon} {format_source}",
+        "format-muted": "󰟎  {format_source}",
         "format-source": "{volume}% ",
         "format-source-muted": "",
         "format-icons": {
             "headphone": "",
-            "hands-free": "",
-            "headset": "",
+            "hands-free": "",
+            "headset": "",
             "phone": "",
             "portable": "",
             "car": "",
@@ -154,7 +146,7 @@
     },
     
     "custom/wlogout": {
-        "format": "  ",
+        "format": "   ",
         "tooltip": false,
         "on-click": "wlogout --margin 540 --column-spacing 100 --row-spacing 50 --protocol layer-shell"
     }
