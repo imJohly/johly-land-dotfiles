@@ -5,9 +5,9 @@
 }
 
 /* @define-color normal-background #11192c; */
-@define-color foreground          rgb(193, 193, 193);
+@define-color foreground          #c1c1c1;
 @define-color normal-background   #131519;
-@define-color selected-background rgb(57, 66, 73);
+@define-color selected-background #39424A;
 @define-color accent              #ff0037;
 @define-color accent-dark         #8a0320;
 @define-color accent-two          #00ffe1;
@@ -42,6 +42,16 @@ button:hover {
     background: inherit;
 }
 
+tooltip {
+    background: @normal-background;
+    border: none;
+    box-shadow: #000000 0 0 3px 0;
+}
+
+tooltip label {
+    color: @foreground;
+}
+
 #battery,
 #cpu,
 #memory,
@@ -58,13 +68,11 @@ button:hover {
 #scratchpad,
 #mpd
 #custom-wlogout {
-    margin: 0 2px;
     padding: 0 8px;
 }
 
-#window,
-#workspaces {
-    margin: 0 4px;
+#window {
+    margin: 0 12px;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
@@ -77,18 +85,23 @@ button:hover {
     margin-right: 0;
 }
 
-
-/* LEFT MODULES */
-.modules-left {
-    margin-left: 16px;
-    margin-top: 16px;
+/* PADDING FOR ALL MODULES */
+.modules-left, .modules-right, #clock {
+    margin-top:     16px;
+    margin-bottom:  3px;
+    margin-left:    16px;
+    margin-right:   16px;
+    
+    color: @foreground;
 }
 
-#workspaces {
-    padding-left: 2px;
-    padding-right: 6px;
+/* LEFT MODULES */
 
-    border-radius: 16px;
+#workspaces {
+    padding: 8px 14px 8px 10px;
+    margin: 3px;
+
+    border-radius: 8px;
     border-style: solid;
     border-width: 0;
     border-color: transparent;
@@ -96,6 +109,8 @@ button:hover {
     background: @normal-background;
     
     transition: 250ms;
+    
+    box-shadow: #000000 0 0 3px 0;
 }
 
 #workspaces button {
@@ -122,24 +137,28 @@ button:hover {
 /* CENTER MODULES */
 
 #clock {
-    margin-top: 16px;
-    padding: 0 12px;
+    padding-left: 18px;
+    padding-right: 18px;
+
+    color: @accent;
     background-color: @normal-background;
 
-    border-radius: 12px;
+    border-radius: 8px;
+    
+    box-shadow: #000000 0 0 3px 0;
 }
 
 /* RIGHT MODULES */
 
 .modules-right {
-    margin-top: 16px;
-    margin-right: 16px;
-    padding: 4px 10px;
+    padding-right: 12px;
+    padding-left:  6px;
 
-    color: @foreground;
     background-color: @normal-background;
 
-    border-radius: 12px;
+    border-radius: 8px;
+
+    box-shadow: #000000 0 0 3px 0;
 }
 
 #custom-wlogout button {
@@ -207,56 +226,10 @@ button:hover {
     animation-direction: alternate;
 }
 
-/* #pulseaudio { */
-/*     border: 2px solid @accent; */
-/*     background-color: @normal-background; */
-/*     color: @accent; */
-/* } */
-/**/
-/* #pulseaudio.muted { */
-/*     border: 2px solid @accent; */
-/*     background-color: @normal-background; */
-/*     color: @accent; */
-/* } */
-/**/
-/* #backlight { */
-/*     border: 2px solid @accent; */
-/*     background-color: @normal-background; */
-/*     color: @accent; */
-/* } */
-/**/
-/* #temperature { */
-/*     border: 2px solid @accent; */
-/*     background-color: @normal-background; */
-/*     color: @accent; */
-/* } */
-/**/
-/* #temperature.critical { */
-/*     border: 2px solid @accent; */
-/*     background-color: @normal-background; */
-/*     color: @accent; */
-/* } */
-/**/
-/* #memory { */
-/*     border: 2px solid @accent; */
-/*     background-color: @normal-background; */
-/*     color: @accent; */
-/* } */
-/**/
-/* #cpu { */
-/*     border-width: 2px; */
-/*     border-style: solid; */
-/*     border-image: linear-gradient(45deg, @accent, @accent-two) 1; */
-/*     background-color: @normal-background; */
-/*     color: @accent; */
-/* } */
-/**/
-/* #network { */
-/*     border: 2px solid @accent; */
-/*     background-color: @normal-background; */
-/*     color: @accent; */
-/* } */
-/**/
-/* #network.disconnected { */
-/*     background-color: @normal-background; */
-/* } */
+#pulseaudio.muted {
+    color: @accent;
+}
+
+#network.disconnected {
+    color: @accent;
+}
