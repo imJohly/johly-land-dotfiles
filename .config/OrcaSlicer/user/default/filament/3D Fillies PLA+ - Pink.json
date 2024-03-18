@@ -12,7 +12,10 @@
         "90"
     ],
     "filament_flow_ratio": [
-        "0.972"
+        "1.001"
+    ],
+    "filament_max_volumetric_speed": [
+        "22.8"
     ],
     "filament_settings_id": [
         "3D Fillies PLA+ - Pink"
@@ -24,6 +27,12 @@
     "inherits": "Sovol Generic PLA",
     "is_custom_defined": "0",
     "name": "3D Fillies PLA+ - Pink",
+    "nozzle_temperature": [
+        "195"
+    ],
+    "nozzle_temperature_initial_layer": [
+        "200"
+    ],
     "nozzle_temperature_range_high": [
         "220"
     ],

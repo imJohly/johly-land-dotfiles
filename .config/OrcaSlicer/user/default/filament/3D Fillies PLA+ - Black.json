@@ -11,6 +11,9 @@
     "fan_min_speed": [
         "90"
     ],
+    "filament_cost": [
+        "26"
+    ],
     "filament_flow_ratio": [
         "0.972"
     ],
