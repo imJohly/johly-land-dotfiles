@@ -1,11 +1,13 @@
 {
-    "layer": "top", // Waybar at top layer
-    "output": ["eDP-1", "DP-2"],
+    "layer": "bottom", // Waybar at top layer
+    "output": ["eDP-1", "DP-1"],
     "position": "top", // Waybar position (top|bottom|left|right)
 
-    "height": 0, // Waybar height (to be removed for auto height)
-
-    "spacing": 0, // Gaps between modules (4px)
+    "height": 24, // Waybar height (to be removed for auto height)
+    
+    "margin-top": 16,
+    "margin-left": 16,
+    "margin-right": 16,
     
     "modules-left": ["hyprland/workspaces", "tray"],
     "modules-center": ["clock", "idle_inhibitor"],
@@ -20,7 +22,7 @@
         "format-icons": {
             "urgent": "",
             "active": "",
-            "default": ""
+            "default": ""
         }
     },
 
@@ -146,9 +148,9 @@
     },
     
     "custom/wlogout": {
-        "format": "   ",
+        "format": " 󰣇 ",
         "tooltip": false,
-        "on-click": "wlogout --margin 540 --column-spacing 100 --row-spacing 50 --protocol layer-shell"
+        "on-click": "wlogout --protocol layer-shell"
     }
 }
 
