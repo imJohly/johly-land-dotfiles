@@ -1,42 +1,31 @@
 {
     "label" : "lock",
-    "action" : "swaylock",
-    "text" : " Lock",
-    "keybind" : "l",
-    "circular" : true
+    "action" : "loginctl lock-session",
+    "text" : "Lock",
+    "keybind" : "l"
 }
-{
-    "label" : "hibernate",
-    "action" : "systemctl hibernate",
-    "text" : "󰒲  Hibernate",
-    "keybind" : "h"
-    "circular" : true
-}
+
 {
     "label" : "logout",
     "action" : "loginctl terminate-user $USER",
-    "text" : "󰍃  Logout",
+    "text" : "Logout",
     "keybind" : "e"
-    "circular" : true
 }
 {
     "label" : "shutdown",
     "action" : "systemctl poweroff",
-    "text" : "  Shutdown",
+    "text" : "Shutdown",
     "keybind" : "s"
-    "circular" : true
 }
 {
     "label" : "suspend",
     "action" : "systemctl suspend",
-    "text" : " Suspend",
+    "text" : "Suspend",
     "keybind" : "u"
-    "circular" : true
 }
 {
     "label" : "reboot",
     "action" : "systemctl reboot",
-    "text" : "󱞥  Reboot",
+    "text" : "Reboot",
     "keybind" : "r"
-    "circular" : true
 }
