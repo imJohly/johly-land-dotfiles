@@ -14,9 +14,9 @@ window {
 
     padding: 48px;
 
-    background-color: #131519;
+    background-color: #2E3440d9;
     border: none;
-    border-radius: 12px;
+    border-radius: 16px;
 }
 
 listview {
@@ -71,12 +71,12 @@ element-icon {
 }
 
 entry {
-    text-color: #ff0037;
+    text-color: #749699;
 }
 
 element.selected.normal {
-    background-color: #202027;
-    text-color: #ff0037;
+    background-color: #4c566a;
+    text-color: #749699;
 }
 
 element-text {
