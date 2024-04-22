@@ -4,6 +4,9 @@ return require('packer').startup(function(use)
 	-- Packer can manage itself
 	use 'wbthomason/packer.nvim'
 
+    -- gitsigns
+    use ( 'lewis6991/gitsigns.nvim' )
+
 	-- Fuzzy finder
 	use {
 		'nvim-telescope/telescope.nvim', tag = '0.1.5',
@@ -33,13 +36,10 @@ return require('packer').startup(function(use)
 	}
 
     -- Theming
-    use {
-        "loctvl842/monokai-pro.nvim",
-        config = function()
-            require("monokai-pro").setup()
-        end
-    }
+    use { 'shaunsingh/nord.nvim' }
 
+    -- Statusline
+    use { 'nvim-lualine/lualine.nvim' }
     -- Easy Commenting
     use {
 		'numToStr/Comment.nvim',
@@ -53,33 +53,24 @@ return require('packer').startup(function(use)
 		"max397574/better-escape.nvim",
 		config = function()
 			require("better_escape").setup({
-				mapping = {"jk", "jj"}, -- a table with mappings to use
-				timeout = vim.o.timeoutlen, -- the time in which the keys must be hit in ms.
-                clear_empty_lines = false, -- clear line after escaping if there is only whitespace
-				keys = "<Esc>", -- keys used for escaping, if it is a function will use the result everytime
-				-- example(recommended)
-				-- keys = function()
-					--   return vim.api.nvim_win_get_cursor(0)[2] > 1 and '<esc>l' or '<esc>'
-					-- end,
+				mapping = {"jk", "jj"},
+                timeout = vim.o.timeoutlen,
+                clear_empty_lines = true,
+				keys = "<Esc>",
 			})
 		end,
 	}
 
-    use {
-        'nvim-tree/nvim-tree.lua',
-        requires = {
-            'nvim-tree/nvim-web-devicons', -- optional
-            'lewis6991/gitsigns.nvim',
-        },
-    }
 
     use {
         "windwp/nvim-autopairs",
         config = function() require("nvim-autopairs").setup {} end
     }
 
-    -- Adds tabs
+    use { 'nvim-tree/nvim-tree.lua' }
 	use { 'romgrk/barbar.nvim' }
+    use { 'nvim-tree/nvim-web-devicons' }
+    use { 'lewis6991/gitsigns.nvim' }
 
     -- Allows for selections to be surrounded with characters
     use { 'machakann/vim-sandwich' }

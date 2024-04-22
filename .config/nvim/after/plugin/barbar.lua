@@ -7,4 +7,3 @@ map('n', '<A-.>', '<Cmd>BufferNext<CR>', opts)
 
 -- Close Buffer
 map('n', '<A-c>', '<Cmd>BufferClose<CR>', opts)
-
