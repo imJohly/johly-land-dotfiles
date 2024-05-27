@@ -15,7 +15,13 @@ return require('packer').startup(function(use)
 	}
 
     -- Treesitter
-    use ( 'nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = function()
+            local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+            ts_update()
+        end,
+    }
 
     -- LSPzero
     use {
@@ -62,6 +68,16 @@ return require('packer').startup(function(use)
 	}
 
 
+    -- Platformio
+    use {
+        'anurag3301/nvim-platformio.lua',
+        requires = {
+            {'akinsho/nvim-toggleterm.lua'},
+            {'nvim-telescope/telescope.nvim'},
+            {'nvim-lua/plenary.nvim'},
+        }
+    }
+
     use {
         "windwp/nvim-autopairs",
         config = function() require("nvim-autopairs").setup {} end
@@ -70,7 +86,6 @@ return require('packer').startup(function(use)
     use { 'nvim-tree/nvim-tree.lua' }
 	use { 'romgrk/barbar.nvim' }
     use { 'nvim-tree/nvim-web-devicons' }
-    use { 'lewis6991/gitsigns.nvim' }
 
     -- Allows for selections to be surrounded with characters
     use { 'machakann/vim-sandwich' }
