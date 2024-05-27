@@ -17,6 +17,15 @@ curl -o ~/.config/kitty/nord.conf https://raw.githubusercontent.com/connorholyda
 echo "include ./nord.conf" >> kitty.conf
 ```
 
+Install SDDM and make it autologin
+```bash
+yay -S sddm
+sudo mkdir -p /etc/sddm.conf.d
+echo "[Autologin]" | sudo tee -a /etc/sddm.conf.d/autologin.conf
+echo "User=$USER" | sudo tee -a /etc/sddm.conf.d/autologin.conf
+echo "Session=hyprland" | sudo tee -a /etc/sddm.conf.d/autologin.conf
+```
+
 Install bluetooth stuff
 ```bash
 yay -S bluez bluez-utils blueman
