@@ -15,7 +15,7 @@ require('mason-lspconfig').setup({
         "gopls",
         "jsonls",
         "lua_ls",
-        "pyright",
+        "basedpyright",
         "tsserver",
         "yamlls",
     },
@@ -23,3 +23,4 @@ require('mason-lspconfig').setup({
 		lsp_zero.default_setup,
 	},
 })
+
