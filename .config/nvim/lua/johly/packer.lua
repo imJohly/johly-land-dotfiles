@@ -40,6 +40,7 @@ return require('packer').startup(function(use)
 
     -- Statusline
     use { 'nvim-lualine/lualine.nvim' }
+
     -- Easy Commenting
     use {
 		'numToStr/Comment.nvim',
@@ -61,16 +62,32 @@ return require('packer').startup(function(use)
 		end,
 	}
 
-
     use {
         "windwp/nvim-autopairs",
         config = function() require("nvim-autopairs").setup {} end
     }
 
+    -- Dashboard
+    use {
+        'goolord/alpha-nvim',
+        config = function ()
+            require'alpha'.setup(require'alpha.themes.dashboard'.config)
+        end
+    }
+
+    -- Platformio Wrapper
+    use {
+        'anurag3301/nvim-platformio.lua',
+        requires = {
+            {'akinsho/nvim-toggleterm.lua'},
+            {'nvim-telescope/telescope.nvim'},
+            {'nvim-lua/plenary.nvim'},
+        }
+    }
+
     use { 'nvim-tree/nvim-tree.lua' }
 	use { 'romgrk/barbar.nvim' }
     use { 'nvim-tree/nvim-web-devicons' }
-    use { 'lewis6991/gitsigns.nvim' }
 
     -- Allows for selections to be surrounded with characters
     use { 'machakann/vim-sandwich' }

@@ -10,7 +10,6 @@ end)
 require('mason').setup({})
 require('mason-lspconfig').setup({
 	ensure_installed = {
-        "arduino_language_server",
         "clangd",
         "cssls",
         "gopls",
@@ -24,4 +23,3 @@ require('mason-lspconfig').setup({
 		lsp_zero.default_setup,
 	},
 })
-
