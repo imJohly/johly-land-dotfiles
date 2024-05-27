@@ -92,6 +92,10 @@ yay -S \
     xfce4-settings xfce-polkit \
     grim slurp wl-clipboard \
     waybar wlogout rofi-lbonn-wayland \
-    firefox \
+    pavucontrol \
+    firefox vesktop-bin steam todoist-appimage \
+    blender inkscape davinci-resolve audacity scribus \
+    libreoffice-fresh \
+    orca-slicer-bin \
     eog zathura f3d
 ```
