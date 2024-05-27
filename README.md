@@ -2,15 +2,9 @@
 
 A repo for a bunch of dotfiles made for a hyprland setup
 
-## Installation
-Install git
+Install git & yay package manager
 ```bash
-sudo pacman -S git
-```
-
-Install yay package manager
-```bash
-pacman -S --needed git base-devel
+pacman -Sy --needed git base-devel
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
@@ -25,36 +19,16 @@ echo "include ./nord.conf" >> kitty.conf
 
 Install bluetooth stuff
 ```bash
-yay -S bluez bluez-utils
+yay -S bluez bluez-utils blueman
+
 modprobe btusb
 systemctl enable bluetooth.service
 systemctl start bluetooth.service
-yay -S blueman
 ```
 
-Allow screenshotting
+Install GTK theme (Nord)
 ```bash
-yay -S grim slurp wl-clipboard
-```
-
-Install File manager stuff (currently Thunar)
-```bash
-yay -S thunar thunar-volman gvfs tumbler engrampa xfce4-settings
-```
-
-Install polkit stuff
-```bash
-yay -S xfce-polkit
-```
-
-Install Hyprland Ecosystem stuff
-```bash
-yay -S hyprpaper hyprlock hyprpicker
-```
-
-Aesthetics
-```bash
-yay -S nordzy-icon-theme nordic-theme
+yay -S nwg-look nordzy-icon-theme nordic-theme
 gsettings set org.gnome.desktop.interface gtk-theme Nordic
 gsettings set org.gnome.desktop.interface icon-theme Nordzy-cyan-dark
 ```
@@ -100,14 +74,15 @@ cd ~/.config/zsh
 echo "source ~/.zshrc" >> .zshrc
 ```
 
-Install miscellaneous
+Install miscellaneous apps
 ```bash
-yay -S iwgtk \
-    waybar \
-    rofi-lbonn-wayland \
-    wlogout \
+yay -S \
+    iwgtk \
+    hyprpaper hyprlock hyprpicker \
+    thunar thunar-volman gvfs tumbler engrampa \
+    xfce4-settings xfce-polkit \
+    grim slurp wl-clipboard \
+    waybar wlogout rofi-lbonn-wayland \
     firefox \
-    nwg-look \
-    f3d \
-    eog
+    eog zathura f3d
 ```
