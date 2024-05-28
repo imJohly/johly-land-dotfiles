@@ -15,13 +15,7 @@ return require('packer').startup(function(use)
 	}
 
     -- Treesitter
-    use {
-        'nvim-treesitter/nvim-treesitter',
-        run = function()
-            local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
-            ts_update()
-        end,
-    }
+    use ( 'nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 
     -- LSPzero
     use {
@@ -46,6 +40,7 @@ return require('packer').startup(function(use)
 
     -- Statusline
     use { 'nvim-lualine/lualine.nvim' }
+
     -- Easy Commenting
     use {
 		'numToStr/Comment.nvim',
@@ -67,8 +62,24 @@ return require('packer').startup(function(use)
 		end,
 	}
 
+    use {
+        "windwp/nvim-autopairs",
+        config = function() require("nvim-autopairs").setup {} end
+    }
 
-    -- Platformio
+    -- Dashboard
+    use {
+        'nvimdev/dashboard-nvim',
+        event = 'VimEnter',
+        config = function()
+            require('dashboard').setup {
+                -- config
+            }
+        end,
+        requires = {'nvim-tree/nvim-web-devicons'}
+    }
+
+    -- Platformio Wrapper
     use {
         'anurag3301/nvim-platformio.lua',
         requires = {
@@ -76,11 +87,6 @@ return require('packer').startup(function(use)
             {'nvim-telescope/telescope.nvim'},
             {'nvim-lua/plenary.nvim'},
         }
-    }
-
-    use {
-        "windwp/nvim-autopairs",
-        config = function() require("nvim-autopairs").setup {} end
     }
 
     use { 'nvim-tree/nvim-tree.lua' }

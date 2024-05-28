@@ -10,13 +10,12 @@ end)
 require('mason').setup({})
 require('mason-lspconfig').setup({
 	ensure_installed = {
-        "arduino_language_server",
         "clangd",
         "cssls",
         "gopls",
         "jsonls",
         "lua_ls",
-        "pyright",
+        "basedpyright",
         "tsserver",
         "yamlls",
     },
