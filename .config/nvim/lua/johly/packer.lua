@@ -49,6 +49,13 @@ return require('packer').startup(function(use)
 		end
 	}
 
+    -- TODO Comments
+    use {'folke/todo-comments.nvim',
+        config = function()
+            require('todo-comments').setup()
+        end
+    }
+
     -- Better Escape
     use {
 		"max397574/better-escape.nvim",
@@ -89,7 +96,9 @@ return require('packer').startup(function(use)
         }
     }
 
-    use { 'nvim-tree/nvim-tree.lua' }
+    -- Sidebar Diagnostics
+    use { 'sidebar-nvim/sidebar.nvim' }
+
 	use { 'romgrk/barbar.nvim' }
     use { 'nvim-tree/nvim-web-devicons' }
 
