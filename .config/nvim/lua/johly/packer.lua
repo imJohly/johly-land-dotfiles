@@ -95,12 +95,11 @@ return require('packer').startup(function(use)
             {'nvim-lua/plenary.nvim'},
         }
     }
-
-    -- Sidebar Diagnostics
-    use { 'sidebar-nvim/sidebar.nvim' }
+    
+    -- File Tree Manager
+    use { 'nvim-tree/nvim-tree.lua' }
 
 	use { 'romgrk/barbar.nvim' }
-    use { 'nvim-tree/nvim-web-devicons' }
 
     -- Allows for selections to be surrounded with characters
     use { 'machakann/vim-sandwich' }
