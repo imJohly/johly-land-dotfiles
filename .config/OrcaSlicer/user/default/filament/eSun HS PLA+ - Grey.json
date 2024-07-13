@@ -1,12 +1,12 @@
 {
     "default_filament_colour": [
-        "#C01C28"
+        "#77767B"
     ],
-    "fan_max_speed": [
-        "90"
+    "enable_pressure_advance": [
+        "1"
     ],
     "fan_min_speed": [
-        "90"
+        "70"
     ],
     "filament_flow_ratio": [
         "0.972"
@@ -15,7 +15,7 @@
         "27.5"
     ],
     "filament_settings_id": [
-        "eSun HS PLA+ - Red"
+        "eSun HS PLA+ - Grey"
     ],
     "filament_vendor": [
         "eSun"
@@ -23,7 +23,7 @@
     "from": "User",
     "inherits": "Sovol Generic PLA",
     "is_custom_defined": "0",
-    "name": "eSun HS PLA+ - Red",
+    "name": "eSun HS PLA+ - Grey",
     "nozzle_temperature": [
         "215"
     ],
@@ -36,8 +36,8 @@
     "nozzle_temperature_range_low": [
         "210"
     ],
-    "overhang_fan_speed": [
-        "90"
+    "pressure_advance": [
+        "0.03"
     ],
     "version": "1.9.0.2"
 }
