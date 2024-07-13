@@ -111,4 +111,6 @@ return require('packer').startup(function(use)
 
     use { "petertriho/nvim-scrollbar" }
 
+    use { 'simrat39/rust-tools.nvim' }
+
 end)
