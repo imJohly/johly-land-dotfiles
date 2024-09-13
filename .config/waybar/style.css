@@ -82,6 +82,14 @@ window#waybar {
     font-size: 16px;
 }
 
+#battery.warning {
+    background: #d08770;
+}
+
+#battery.critical {
+    background: #bf616a;
+}
+
 #custom-wlogout {
     padding-right: 10px;
     padding-left: 0px;

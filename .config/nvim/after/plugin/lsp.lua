@@ -9,16 +9,16 @@ end)
 -- here you can setup the language servers 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-	ensure_installed = {
-        "clangd",
-        "cssls",
-        "gopls",
-        "jsonls",
-        "lua_ls",
-        "basedpyright",
-        "tsserver",
-        "yamlls",
-    },
+	-- ensure_installed = {
+ --        "clangd",
+ --        "cssls",
+ --        "gopls",
+ --        "jsonls",
+ --        "lua_ls",
+ --        "basedpyright",
+ --        "tsserver",
+ --        "yamlls",
+ --    },
     handlers = {
 		lsp_zero.default_setup,
 	},

@@ -37,6 +37,7 @@ return require('packer').startup(function(use)
 
     -- Theming
     use { 'shaunsingh/nord.nvim' }
+    -- use { 'AlexvZyl/nordic.nvim' }
 
     -- Statusline
     use { 'nvim-lualine/lualine.nvim' }
